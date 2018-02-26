@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message Cry {
+	int64 Time = 1;
+	string Status = 2;
+}
+
+message Hark {
+	string Harkening = 1;
+}
+
+service Crier {
+	rpc ListenForCries(stream Hark) returns (stream Cry) {}
+}
